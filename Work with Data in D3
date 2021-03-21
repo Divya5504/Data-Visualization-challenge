@@ -22,18 +22,19 @@ Here is an example that selects a ul element and creates a new list item based o
 It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the ul on the page. Next, select all list items, which returns an empty selection. Then the data() method reviews the dataset and runs the following code three times, once for each item in the array. The enter() method sees there are no li elements on the page, but it needs 3 (one for each piece of data in dataset). New li elements are appended to the ul and have the text New item.
 
 Select the body node, then select all h2 elements. Have D3 create and append an h2 tag for each item in the dataset array. The text in the h2 should say New Title. Your code should use the data() and enter() methods.
-
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
     
-    // Add your code below this line
     d3.select("body").selectAll("h2")
       .data(dataset)
       .enter()
       .append("h2")
-      .text("New Title")
-    
-    // Add your code above this line
+      // Add your code below this line
+      
+      .text(d=> `${d} USD`);
+      
+      // Add your code above this line
   </script>
 </body>
+© 2021 GitHub, Inc.
